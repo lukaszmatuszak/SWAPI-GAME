@@ -1,10 +1,12 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Views from './views/Views';
 
 function App() {
     return (
-        <div className="App">
-            <p>placeholder</p>
-        </div>
+        <Router>
+            <Views />
+        </Router>
     );
 }
 
