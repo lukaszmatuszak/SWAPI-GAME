@@ -1,16 +1,14 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
-import TopBar from './TopBar/TopBar';
+import TopBar from '../TopBar/TopBar';
 
 const Layout: React.FC = ({ children }) => {
     return (
-        <Grid container>
+        <Box height="100vh">
             <TopBar />
-            <Grid item xs={12}>
-                {children}
-            </Grid>
-        </Grid>
+            {children}
+        </Box>
     );
 };
 
