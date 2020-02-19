@@ -1,17 +1,27 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography, Box } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
-import PageGrid from '../../components/PageGrid/PageGrid';
+import { RESOURCES } from './resources';
+import ResourceTile from '../../components/ResourceTile/ResourceTile';
 
 const HomeView: React.FC = () => (
-    <PageGrid container direction="row" justify="center" alignItems="center">
-        <Grid item xs={2}>
-            placeholder
+    <>
+        <Box pb={2} pt={2}>
+            <Typography align="center" variant="h2">
+                Choose Your Weapon
+            </Typography>
+        </Box>
+        <Grid xs={12} container spacing={2} justify="center">
+            {RESOURCES.map(resource => (
+                <Grid key={resource.iconAlt} item xs={4}>
+                    <Link to={resource.redirect}>
+                        <ResourceTile resource={resource} />
+                    </Link>
+                </Grid>
+            ))}
         </Grid>
-        <Grid item xs={2}>
-            placeholder
-        </Grid>
-    </PageGrid>
+    </>
 );
 
 export default HomeView;

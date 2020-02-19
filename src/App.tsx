@@ -3,12 +3,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import Views from './views/Views';
 
-function App() {
-    return (
-        <Router>
-            <Views />
-        </Router>
-    );
-}
+const App: React.FC = () => (
+    <Router>
+        <Views />
+    </Router>
+);
 
 export default App;
