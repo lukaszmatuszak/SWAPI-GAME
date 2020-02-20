@@ -11,12 +11,17 @@ const fetchData = <T>(url: string, results: T[] = []): Promise<T[]> =>
             return [...results, ...data?.results];
         });
 
-export const useFetch = <T>(url: string): T[] => {
+export const useFetch = <T>(url: string): [T[], boolean] => {
     const [results, setResults] = useState<T[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect(() => {
-        fetchData<T>(url).then(data => setResults(data));
+        fetchData<T>(url)
+            .then(data => setResults(data))
+            .finally(() => {
+                setIsLoading(false);
+            });
     }, [url]);
 
-    return results;
+    return [results, isLoading];
 };

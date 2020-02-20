@@ -1,15 +1,20 @@
 import React from 'react';
 import { Grid, Typography, Box } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 
 import Battleground from '../../components/Battleground/Battleground';
 import { useFetch } from '../../hooks/useFetch';
 import { Starship } from '../../interfaces/Starship';
 import { ApiUrls } from '../../core/urls/ApiUrls';
-import { useTranslation } from 'react-i18next';
+import Spinner from '../../components/Spinner/Spinner';
 
 const StarshipsArenaView: React.FC = () => {
-    const starships = useFetch<Starship>(ApiUrls.STARSHIPS);
+    const [starships, isLoading] = useFetch<Starship>(ApiUrls.STARSHIPS);
     const { t } = useTranslation();
+
+    if (isLoading) {
+        return <Spinner />;
+    }
 
     return (
         <Grid container direction="column">

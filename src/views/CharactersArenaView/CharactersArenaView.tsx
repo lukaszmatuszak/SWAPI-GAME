@@ -6,10 +6,15 @@ import Battleground from '../../components/Battleground/Battleground';
 import { useFetch } from '../../hooks/useFetch';
 import { Character } from '../../interfaces/Character';
 import { ApiUrls } from '../../core/urls/ApiUrls';
+import Spinner from '../../components/Spinner/Spinner';
 
 const CharactersArenaView: React.FC = () => {
-    const characters = useFetch<Character>(ApiUrls.CHARACTERS);
+    const [characters, isLoading] = useFetch<Character>(ApiUrls.CHARACTERS);
     const { t } = useTranslation();
+
+    if (isLoading) {
+        return <Spinner />;
+    }
 
     return (
         <Grid container direction="column">
