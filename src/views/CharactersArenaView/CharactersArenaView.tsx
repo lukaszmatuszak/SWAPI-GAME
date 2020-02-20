@@ -6,7 +6,7 @@ import Battleground from '../../components/Battleground/Battleground';
 const CharactersArenaView: React.FC = () => (
     <Grid container direction="column">
         <Grid item xs={12}>
-            <Box pt={4} pb={4}>
+            <Box pt={6} pb={6}>
                 <Typography align="center" variant="h2">
                     Characters Arena
                 </Typography>
