@@ -8,13 +8,13 @@ export interface Resource {
 export const RESOURCES: Resource[] = [
     {
         iconSrc: '/vader.svg',
-        title: 'Characters',
+        title: 'CHARACTERS',
         iconAlt: 'vader',
         redirect: 'characters',
     },
     {
         iconSrc: '/falcon.svg',
-        title: 'Starships',
+        title: 'STARSHIPS',
         iconAlt: 'falcon',
         redirect: 'starships',
     },
