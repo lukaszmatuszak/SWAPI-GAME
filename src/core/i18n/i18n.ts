@@ -7,6 +7,7 @@ import locales from './locales/index';
 i18n.use(initReactI18next)
     .use(LanguageDetector)
     .init({
+        whitelist: ['en', 'pl'],
         ns: ['Common'],
         defaultNS: 'Common',
         resources: locales,
