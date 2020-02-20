@@ -1,5 +1,7 @@
 {
   "CHARACTERS": "Postacie",
   "STARSHIPS": "Statki kosmiczne",
-  "CHOOSE_GAME_MODE": "Wybierz tryb gry"
+  "CHOOSE_GAME_MODE": "Wybierz tryb gry",
+  "CHARACTERS_ARENA": "Arena postaci",
+  "STARSHIPS_ARENA": "Arena statków kosmicznych"
 }

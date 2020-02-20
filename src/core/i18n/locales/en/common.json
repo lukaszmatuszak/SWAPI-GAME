@@ -1,5 +1,7 @@
 {
   "CHARACTERS": "Characters",
   "STARSHIPS": "Starships",
-  "CHOOSE_GAME_MODE": "Choose game mode"
+  "CHOOSE_GAME_MODE": "Choose game mode",
+  "CHARACTERS_ARENA": "Characters arena",
+  "STARSHIPS_ARENA": "Starships arena"
 }
