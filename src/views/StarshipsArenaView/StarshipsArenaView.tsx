@@ -26,7 +26,7 @@ const StarshipsArenaView: React.FC = () => {
                 </Box>
             </Grid>
             <Grid item xs={12}>
-                <Battleground />
+                <Battleground contestants={starships} />
             </Grid>
         </Grid>
     );
