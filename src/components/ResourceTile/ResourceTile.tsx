@@ -11,12 +11,18 @@ const ResourceTile: React.FC<ResourceProps> = ({ resource }: ResourceProps) => {
         <Card>
             <CardContent>
                 <Grid container alignItems="center">
-                    <img
-                        width="40%"
-                        src={resource.iconSrc}
-                        alt={resource.iconAlt}
-                    />
-                    <Typography variant="h3">{t(resource.title)}</Typography>
+                    <Grid item xs={6}>
+                        <img
+                            width="80%"
+                            src={resource.iconSrc}
+                            alt={resource.iconAlt}
+                        />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Typography variant="h3">
+                            {t(resource.title)}
+                        </Typography>
+                    </Grid>
                 </Grid>
             </CardContent>
         </Card>
