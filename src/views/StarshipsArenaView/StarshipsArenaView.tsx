@@ -26,7 +26,11 @@ const StarshipsArenaView: React.FC = () => {
                 </Box>
             </Grid>
             <Grid item xs={12}>
-                <Battleground contestants={starships} />
+                <Battleground
+                    contestants={starships.filter(
+                        starship => starship.crew !== 'unknown',
+                    )}
+                />
             </Grid>
         </Grid>
     );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Grid, Typography, Box } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 
@@ -26,7 +26,11 @@ const CharactersArenaView: React.FC = () => {
                 </Box>
             </Grid>
             <Grid item xs={12}>
-                <Battleground contestants={characters} />
+                <Battleground
+                    contestants={characters.filter(
+                        character => character.mass !== 'unknown',
+                    )}
+                />
             </Grid>
         </Grid>
     );

@@ -9,13 +9,13 @@ const DetailsTile: React.FC<DetailsTileProps> = ({
 }: DetailsTileProps) => (
     <Card>
         <CardContent>
-            <Grid container alignItems="center">
+            <Grid container alignItems="center" direction="column">
                 <Grid item xs={6}>
                     {contestant?.name}
                 </Grid>
                 <Grid item xs={6}>
-                    {(contestant as Starship)?.model ||
-                        (contestant as Character)?.height}
+                    {(contestant as Starship)?.crew ||
+                        (contestant as Character)?.mass}
                 </Grid>
             </Grid>
         </CardContent>
