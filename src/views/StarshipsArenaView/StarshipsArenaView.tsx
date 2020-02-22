@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Grid, Typography, Box } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 
@@ -11,6 +11,10 @@ import Spinner from '../../components/Spinner/Spinner';
 const StarshipsArenaView: React.FC = () => {
     const [starships, isLoading] = useFetch<Starship>(ApiUrls.STARSHIPS);
     const { t } = useTranslation();
+
+    const filteredStarships = useMemo(() => {
+        return starships.filter(starship => starship.crew !== 'unknown');
+    }, [starships]);
 
     if (isLoading) {
         return <Spinner />;
@@ -26,11 +30,7 @@ const StarshipsArenaView: React.FC = () => {
                 </Box>
             </Grid>
             <Grid item xs={12}>
-                <Battleground
-                    contestants={starships.filter(
-                        starship => starship.crew !== 'unknown',
-                    )}
-                />
+                <Battleground contestants={filteredStarships} />
             </Grid>
         </Grid>
     );

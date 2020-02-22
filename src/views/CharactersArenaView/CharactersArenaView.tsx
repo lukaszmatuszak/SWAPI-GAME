@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { Grid, Typography, Box } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 
@@ -11,6 +11,10 @@ import Spinner from '../../components/Spinner/Spinner';
 const CharactersArenaView: React.FC = () => {
     const [characters, isLoading] = useFetch<Character>(ApiUrls.CHARACTERS);
     const { t } = useTranslation();
+
+    const filteredCharacters = useMemo(() => {
+        return characters.filter(character => character.mass !== 'unknown');
+    }, [characters]);
 
     if (isLoading) {
         return <Spinner />;
@@ -26,11 +30,7 @@ const CharactersArenaView: React.FC = () => {
                 </Box>
             </Grid>
             <Grid item xs={12}>
-                <Battleground
-                    contestants={characters.filter(
-                        character => character.mass !== 'unknown',
-                    )}
-                />
+                <Battleground contestants={filteredCharacters} />
             </Grid>
         </Grid>
     );
