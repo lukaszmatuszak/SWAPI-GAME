@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeView Snapshot -  renders correctly 1`] = `
+<WithStyles(ForwardRef(Grid))
+  container={true}
+>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+    xs={12}
+  >
+    <Styled(MuiBox)
+      pb={6}
+      pt={6}
+    >
+      <WithStyles(ForwardRef(Typography))
+        align="center"
+        variant="h2"
+      >
+        Choose game mode
+      </WithStyles(ForwardRef(Typography))>
+    </Styled(MuiBox)>
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    container={true}
+    item={true}
+    justify="center"
+    spacing={2}
+    xs={12}
+  >
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      key="vader"
+      xs={4}
+    >
+      <Link
+        to="characters"
+      >
+        <ResourceTile
+          resource={
+            Object {
+              "iconAlt": "vader",
+              "iconSrc": "/vader.svg",
+              "redirect": "characters",
+              "title": "CHARACTERS",
+            }
+          }
+        />
+      </Link>
+    </WithStyles(ForwardRef(Grid))>
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      key="falcon"
+      xs={4}
+    >
+      <Link
+        to="starships"
+      >
+        <ResourceTile
+          resource={
+            Object {
+              "iconAlt": "falcon",
+              "iconSrc": "/falcon.svg",
+              "redirect": "starships",
+              "title": "STARSHIPS",
+            }
+          }
+        />
+      </Link>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Grid))>
+</WithStyles(ForwardRef(Grid))>
+`;

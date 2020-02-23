@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChangeLanguageMenu Snapshot -  renders correctly 1`] = `
+<WithStyles(ForwardRef(FormControl))
+  component="fieldset"
+>
+  <ForwardRef(RadioGroup)
+    aria-label="position"
+    name="position"
+    onChange={[Function]}
+    row={true}
+    value="en"
+  >
+    <WithStyles(ForwardRef(FormControlLabel))
+      control={<ForwardRef(WithStyles) />}
+      label="English"
+      labelPlacement="start"
+      value="en"
+    />
+    <WithStyles(ForwardRef(FormControlLabel))
+      control={<ForwardRef(WithStyles) />}
+      label="Polish"
+      labelPlacement="start"
+      value="pl"
+    />
+  </ForwardRef(RadioGroup)>
+</WithStyles(ForwardRef(FormControl))>
+`;

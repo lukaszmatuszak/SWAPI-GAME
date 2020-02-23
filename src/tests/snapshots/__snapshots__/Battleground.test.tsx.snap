@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Battleground Snapshot -  renders correctly 1`] = `
+<WithStyles(ForwardRef(Grid))
+  container={true}
+  item={true}
+  justify="center"
+  spacing={2}
+  xs={12}
+>
+  <WithStyles(ForwardRef(Grid))
+    container={true}
+    item={true}
+    justify="center"
+    xs={12}
+  >
+    <WithStyles(ForwardRef(Typography))
+      data-test="score"
+      variant="h3"
+    >
+      0
+       : 
+      0
+    </WithStyles(ForwardRef(Typography))>
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+    xs={4}
+  >
+    <DetailsTile
+      playerStatus={
+        Object {
+          "crew": null,
+          "mass": null,
+          "name": null,
+          "score": 0,
+          "status": null,
+        }
+      }
+    />
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+    xs={4}
+  >
+    <DetailsTile
+      playerStatus={
+        Object {
+          "crew": null,
+          "mass": null,
+          "name": null,
+          "score": 0,
+          "status": null,
+        }
+      }
+    />
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    container={true}
+    item={true}
+    justify="center"
+    xs={12}
+  >
+    <WithStyles(ForwardRef(Button))
+      color="primary"
+      data-test="play-again"
+      onClick={[Function]}
+      variant="contained"
+    >
+      Play Again
+    </WithStyles(ForwardRef(Button))>
+  </WithStyles(ForwardRef(Grid))>
+</WithStyles(ForwardRef(Grid))>
+`;

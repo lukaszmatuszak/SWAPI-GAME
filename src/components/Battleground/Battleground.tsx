@@ -105,7 +105,7 @@ const Battleground: React.FC<BattlegroundProps> = ({
     return (
         <Grid xs={12} item container spacing={2} justify="center">
             <Grid container item xs={12} justify="center">
-                <Typography variant="h3">
+                <Typography variant="h3" data-test="score">
                     {gameStatus.playerOne.score} : {gameStatus.playerTwo.score}
                 </Typography>
             </Grid>
@@ -120,6 +120,7 @@ const Battleground: React.FC<BattlegroundProps> = ({
                     variant="contained"
                     color="primary"
                     onClick={startBattle}
+                    data-test="play-again"
                 >
                     {t('PLAY_AGAIN')}
                 </Button>

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner Snapshot -  renders correctly 1`] = `
+<Styled(MuiBox)
+  alignItems="center"
+  display="flex"
+  height="calc(100vh - 48px)"
+  justifyContent="center"
+>
+  <WithStyles(ForwardRef(CircularProgress))
+    size={70}
+  />
+</Styled(MuiBox)>
+`;

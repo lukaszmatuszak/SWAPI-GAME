@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopBar Snapshot -  renders correctly 1`] = `
+<WithStyles(ForwardRef(AppBar))
+  position="static"
+>
+  <WithStyles(ForwardRef(Toolbar))
+    variant="dense"
+  >
+    <Styled(MuiBox)
+      flexGrow={1}
+    >
+      <Link
+        to="/"
+      >
+        <WithStyles(ForwardRef(Typography))
+          color="inherit"
+          variant="h6"
+        >
+          SWAPI Game
+        </WithStyles(ForwardRef(Typography))>
+      </Link>
+    </Styled(MuiBox)>
+    <ChangeLanguageMenu />
+  </WithStyles(ForwardRef(Toolbar))>
+</WithStyles(ForwardRef(AppBar))>
+`;

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner Snapshot -  renders correctly 1`] = `
+<WithStyles(ForwardRef(Card))>
+  <WithStyles(ForwardRef(CardContent))>
+    <WithStyles(ForwardRef(Grid))
+      alignItems="center"
+      container={true}
+    >
+      <WithStyles(ForwardRef(Grid))
+        item={true}
+        xs={6}
+      >
+        <img
+          alt="testAlt"
+          src="/vader.svg"
+          width="80%"
+        />
+      </WithStyles(ForwardRef(Grid))>
+      <WithStyles(ForwardRef(Grid))
+        item={true}
+        xs={6}
+      >
+        <WithStyles(ForwardRef(Typography))
+          variant="h3"
+        >
+          test
+        </WithStyles(ForwardRef(Typography))>
+      </WithStyles(ForwardRef(Grid))>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(CardContent))>
+</WithStyles(ForwardRef(Card))>
+`;

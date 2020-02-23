@@ -32,24 +32,40 @@ const DetailsTile: React.FC<DetailsTileProps> = ({
         <CardContent>
             <Grid container alignItems="center" direction="column">
                 <Grid item xs={12}>
-                    <StatusTypography variant="h5" status={playerStatus.status}>
+                    <StatusTypography
+                        variant="h5"
+                        status={playerStatus.status}
+                        data-test="status"
+                    >
                         {playerStatus.status}
                     </StatusTypography>
                 </Grid>
                 <FullWidthGrid item xs={6}>
                     {playerStatus.crew ? (
-                        <RotatedImg width="100%" src="falcon.svg" />
+                        <RotatedImg
+                            width="100%"
+                            src="falcon.svg"
+                            alt="falcon"
+                        />
                     ) : (
-                        <img width="100%" src="vader.svg" />
+                        <img width="100%" src="vader.svg" alt="vader" />
                     )}
                 </FullWidthGrid>
                 <Grid item xs={6}>
-                    {playerStatus?.name}
+                    <Typography data-test="details-name">
+                        {playerStatus?.name}
+                    </Typography>
                 </Grid>
                 <Grid item xs={6}>
-                    {playerStatus.crew
-                        ? `Crew: ${playerStatus.crew}`
-                        : `Mass: ${playerStatus.mass}`}
+                    <Typography
+                        data-test={`details-${
+                            playerStatus.crew ? 'crew' : 'mass'
+                        }`}
+                    >
+                        {playerStatus.crew
+                            ? `Crew: ${playerStatus.crew}`
+                            : `Mass: ${playerStatus.mass}`}
+                    </Typography>
                 </Grid>
             </Grid>
         </CardContent>
