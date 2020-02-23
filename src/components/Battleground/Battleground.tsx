@@ -5,71 +5,121 @@ import { useTranslation } from 'react-i18next';
 import DetailsTile from '../../components/DetailsTile/DetailsTile';
 import { Starship } from '../../interfaces/Starship';
 import { Character } from '../../interfaces/Character';
+import { GameStatus } from '../../interfaces/GameStatus';
+import { Status } from '../../interfaces/Status';
+import { Challenger } from '../../interfaces/Challenger';
+import { getRandomInteger } from '../../core/utils';
+import { defineStatusForStarship, defineStatusForCharacter } from './utils';
 
 const Battleground: React.FC<BattlegroundProps> = ({
     contestants,
 }: BattlegroundProps) => {
     const { t } = useTranslation();
-    const [score, setScore] = useState<{
-        playerOne: number;
-        playerTwo: number;
-    }>({ playerOne: 0, playerTwo: 0 });
-    const [challengers, setChallengers] = useState<{
-        first: Character | Starship;
-        second: Character | Starship;
-    }>({
-        first: null,
-        second: null,
+
+    const [gameStatus, setGameStatus] = useState<GameStatus>({
+        playerOne: {
+            name: null,
+            status: null,
+            mass: null,
+            crew: null,
+            score: 0,
+        },
+        playerTwo: {
+            name: null,
+            status: null,
+            mass: null,
+            crew: null,
+            score: 0,
+        },
     });
 
-    const drawChallengers = (): void => {
-        const playerOne = Math.floor(Math.random() * contestants.length);
-        const playerTwo = Math.floor(Math.random() * contestants.length);
+    const drawChallengers = (): Challenger[] => {
+        const playerOne = getRandomInteger(contestants.length);
+        const playerTwo = getRandomInteger(contestants.length);
 
-        setChallengers({
-            first: contestants[playerOne],
-            second: contestants[playerTwo],
+        return [contestants[playerOne], contestants[playerTwo]];
+    };
+
+    const defineStatus = (
+        firstChallenger: Challenger,
+        secondChallenger: Challenger,
+    ): Status[] => {
+        if ((firstChallenger as Starship).crew) {
+            return defineStatusForStarship(
+                firstChallenger as Starship,
+                secondChallenger as Starship,
+            );
+        }
+
+        if ((firstChallenger as Character).mass) {
+            return defineStatusForCharacter(
+                firstChallenger as Character,
+                secondChallenger as Character,
+            );
+        }
+    };
+
+    const prepareBattleground = (
+        firstChallenger: Challenger,
+        secondChallenger: Challenger,
+    ): void => {
+        const [statusPlayerOne, statusPlayerTwo] = defineStatus(
+            firstChallenger,
+            secondChallenger,
+        );
+
+        setGameStatus({
+            playerOne: {
+                name: firstChallenger.name,
+                status: statusPlayerOne,
+                mass: Number((firstChallenger as Character).mass),
+                crew: Number((firstChallenger as Starship).crew),
+                score:
+                    statusPlayerOne !== Status.LOOSER
+                        ? gameStatus.playerOne.score + 1
+                        : gameStatus.playerOne.score,
+            },
+            playerTwo: {
+                name: secondChallenger.name,
+                status: statusPlayerTwo,
+                mass: Number((secondChallenger as Character).mass),
+                crew: Number((secondChallenger as Starship).crew),
+                score:
+                    statusPlayerTwo !== Status.LOOSER
+                        ? gameStatus.playerTwo.score + 1
+                        : gameStatus.playerTwo.score,
+            },
         });
     };
 
+    const startBattle = (): void => {
+        const [firstChallenger, secondChallenger] = drawChallengers();
+
+        prepareBattleground(firstChallenger, secondChallenger);
+    };
+
     useEffect(() => {
-        drawChallengers();
+        startBattle();
     }, [contestants]);
-
-    useEffect(() => {
-        if ((challengers.first as Starship)?.crew) {
-            +(challengers.first as Starship)?.crew >
-            +(challengers.second as Starship)?.crew
-                ? setScore({ ...score, playerOne: score.playerOne + 1 })
-                : setScore({ ...score, playerTwo: score.playerTwo + 1 });
-        }
-
-        if ((challengers.first as Character)?.mass) {
-            +(challengers.first as Character)?.mass >
-            +(challengers.second as Character)?.mass
-                ? setScore({ ...score, playerOne: score.playerOne + 1 })
-                : setScore({ ...score, playerTwo: score.playerTwo + 1 });
-        }
-    }, [challengers]);
 
     return (
         <Grid xs={12} item container spacing={2} justify="center">
             <Grid container item xs={12} justify="center">
                 <Typography variant="h3">
-                    {score.playerOne} : {score.playerTwo}
+                    {gameStatus.playerOne.score} : {gameStatus.playerTwo.score}
                 </Typography>
             </Grid>
             <Grid item xs={4}>
-                <DetailsTile contestant={challengers.first} />
+                <DetailsTile playerStatus={gameStatus.playerOne} />
             </Grid>
             <Grid item xs={4}>
-                <DetailsTile contestant={challengers.second} />
+                <DetailsTile playerStatus={gameStatus.playerTwo} />
             </Grid>
             <Grid container item xs={12} justify="center">
                 <Button
                     variant="contained"
                     color="primary"
-                    onClick={drawChallengers}
+                    onClick={startBattle}
                 >
                     {t('PLAY_AGAIN')}
                 </Button>
@@ -79,7 +129,7 @@ const Battleground: React.FC<BattlegroundProps> = ({
 };
 
 interface BattlegroundProps {
-    contestants: Starship[] | Character[];
+    contestants: Challenger[];
 }
 
 export default Battleground;
