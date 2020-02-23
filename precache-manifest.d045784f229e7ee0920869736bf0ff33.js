@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6f09a1ea6ce3afc7fe6f24551e1c476b",
+    "revision": "830e3b14718f564337ee46d8585ff50a",
     "url": "/SWAPI-GAME/index.html"
   },
   {
-    "revision": "104d8d7da093e0eb6df4",
+    "revision": "22899e3e6ed5ac09b085",
     "url": "/SWAPI-GAME/static/css/main.ec9dd1c0.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SWAPI-GAME/static/js/2.3a8988b5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "104d8d7da093e0eb6df4",
-    "url": "/SWAPI-GAME/static/js/main.a29d7acf.chunk.js"
+    "revision": "22899e3e6ed5ac09b085",
+    "url": "/SWAPI-GAME/static/js/main.b2f15af4.chunk.js"
   },
   {
     "revision": "b458d6aec9c640b22b01",
