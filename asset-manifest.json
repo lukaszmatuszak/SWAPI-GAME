@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/SWAPI-GAME/static/css/main.ec9dd1c0.chunk.css",
-    "main.js": "/SWAPI-GAME/static/js/main.45c0ec59.chunk.js",
-    "main.js.map": "/SWAPI-GAME/static/js/main.45c0ec59.chunk.js.map",
+    "main.js": "/SWAPI-GAME/static/js/main.59fc916b.chunk.js",
+    "main.js.map": "/SWAPI-GAME/static/js/main.59fc916b.chunk.js.map",
     "runtime-main.js": "/SWAPI-GAME/static/js/runtime-main.9160418c.js",
     "runtime-main.js.map": "/SWAPI-GAME/static/js/runtime-main.9160418c.js.map",
     "static/js/2.95fa4642.chunk.js": "/SWAPI-GAME/static/js/2.95fa4642.chunk.js",
     "static/js/2.95fa4642.chunk.js.map": "/SWAPI-GAME/static/js/2.95fa4642.chunk.js.map",
     "index.html": "/SWAPI-GAME/index.html",
-    "precache-manifest.c55a7d4150a1d69e4d0e63f4e5af60b5.js": "/SWAPI-GAME/precache-manifest.c55a7d4150a1d69e4d0e63f4e5af60b5.js",
+    "precache-manifest.d825a2162c32ff94dbdd413190ce5bc0.js": "/SWAPI-GAME/precache-manifest.d825a2162c32ff94dbdd413190ce5bc0.js",
     "service-worker.js": "/SWAPI-GAME/service-worker.js",
     "static/css/main.ec9dd1c0.chunk.css.map": "/SWAPI-GAME/static/css/main.ec9dd1c0.chunk.css.map",
     "static/js/2.95fa4642.chunk.js.LICENSE.txt": "/SWAPI-GAME/static/js/2.95fa4642.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.9160418c.js",
     "static/js/2.95fa4642.chunk.js",
     "static/css/main.ec9dd1c0.chunk.css",
-    "static/js/main.45c0ec59.chunk.js"
+    "static/js/main.59fc916b.chunk.js"
   ]
 }
